@@ -1,10 +1,14 @@
 import streamlit as st
-string = "Odd-Even Finder"
+string = "Largest of three numbers"
 st.set_page_config(page_title=string, page_icon="🔍")
-
-st.title('Odd-Even Finder')
-x = st.number_input('Enter a number')
-if (x).is_integer():
-    if x%2==0:st.write("your number is even")
-    elif x%2!=0:st.write("your number is odd")
-else:st.write("please enter integer number")
+st.title('Greatest of 3 numbers')
+a = st.number_input('Enter number 1')
+b = st.number_input('Enter number 2')
+c = st.number_input('Enter number 3')
+if (a >= b) and (a >= c):
+   largest = a
+elif (b >= a) and (b >= c):
+   largest = b
+else:
+   largest = c
+st.write("Largest of ", a,",", b ,",",c, ",", '= ', largest)
